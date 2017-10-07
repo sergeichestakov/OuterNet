@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { Tab, Tabs } from 'react-mdl';
+import BrowseView from './Tabs/Browse.js';
+import RecentView from './Tabs/Recent.js';
+import SearchView from './Tabs/Search.js';
 import './App.css';
 
 export default class TabView extends Component {
@@ -7,6 +10,16 @@ export default class TabView extends Component {
   constructor(props) {
       super(props)
       this.state = { activeTab: 2 };
+  }
+
+  renderContent(index){
+      if(index == 0){
+        return(<RecentView />);
+      } else if (index == 1){
+        return(<BrowseView />);
+      } else {
+        return(<SearchView />);
+      }
   }
 
   render() {
@@ -18,7 +31,7 @@ export default class TabView extends Component {
             <Tab>Search</Tab>
         </Tabs>
         <section>
-            <div className="content">Content for the tab: {this.state.activeTab}</div>
+            <div className="content">{this.renderContent(this.state.activeTab)}</div>
         </section>
       </div>
     );
