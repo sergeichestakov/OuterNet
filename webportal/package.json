@@ -1,0 +1,22 @@
+{
+  "name": "webportal",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "material-tabs": "0.0.8",
+    "material-ui": "^0.19.3",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-mdl": "^1.10.3",
+    "react-motion": "^0.5.2",
+    "react-scripts": "1.0.14",
+    "react-swipeable-views": "^0.12.8",
+    "react-toolbox": "^2.0.0-beta.12"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
