@@ -15,8 +15,18 @@ export default class TabView extends Component {
         articles: []
       };
   }
-/*
+
   componentDidMount(){
+
+      /* Make a request for the updated articles
+      axios.get('/load')
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+
     return fetch('')
       .then((response) => response.json())
       .then((responseJson) => {
@@ -30,14 +40,14 @@ export default class TabView extends Component {
       })
       .catch((error) => {
         console.error(error);
-      });
-  }*/
+      });*/
+  }
 
   renderContent(index){
       if(index === 0){
-        return(<RecentView />);
+        return(<RecentView articles={this.state.articles}/>);
       } else {
-        return(<BrowseView />);
+        return(<BrowseView articles={this.state.articles}/>);
       }
   }
 

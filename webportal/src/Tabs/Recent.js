@@ -8,6 +8,11 @@ export default class RecentView extends Component {
 
     constructor(props) {
         super(props)
+
+        this.state =
+        {
+          articles: this.props.articles
+        }
     }
 
     generateArticles(){

@@ -10,10 +10,30 @@ const months = [
 
 export default class BrowseView extends Component {
 
-  redirect = (title) => {
-    alert(title)
-  }
+  constructor(props) {
+    super(props);
 
+    this.state = {
+      articles: this.props.articles,
+      searchString: '',
+      searchFocusIndex: 0,
+      searchFoundCount: null,
+      treeData: [
+          { title: 'Category', children: [
+            { title: 'Politics' },
+            { title: 'Natural Disasters'},
+            { title: 'Wars'}
+          ] },
+          { title: 'Date', children: [
+          {title: '2013', children: this.generateMonths()},
+          {title: '2014', children: this.generateMonths()},
+          {title: '2015', children: this.generateMonths()},
+          {title: '2016', children: this.generateMonths()},
+          {title: '2017', children: this.generateMonths(true)}
+        ] }
+      ],
+    };
+  }
 
   generateArticles = (month, currYear = false) => {
     //Title and subtitle which is the description
@@ -21,7 +41,6 @@ export default class BrowseView extends Component {
     if(currYear){
       //Find all articles from that month
       items.push({title: <a href='#'>Article</a>, subtitle: "It is 2017"})
-
 
     } else {
       //Return bs
@@ -46,33 +65,9 @@ export default class BrowseView extends Component {
     return items;
   }
 
+  //TODO: Query for all unique categories
   generateCategories = () => {
-    
-  }
 
-
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      searchString: '',
-      searchFocusIndex: 0,
-      searchFoundCount: null,
-      treeData: [
-          { title: 'Category', children: [
-            { title: 'Politics' },
-            { title: 'Natural Disasters'},
-            { title: 'Wars'}
-          ] },
-          { title: 'Date', children: [
-          {title: '2013', children: this.generateMonths()},
-          {title: '2014', children: this.generateMonths()},
-          {title: '2015', children: this.generateMonths()},
-          {title: '2016', children: this.generateMonths()},
-          {title: '2017', children: this.generateMonths(true)}
-        ] }
-      ],
-    };
   }
 
   render() {
