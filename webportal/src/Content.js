@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Tab, Tabs } from 'react-mdl';
 import BrowseView from './Tabs/Browse.js';
 import RecentView from './Tabs/Recent.js';
+import axios from 'axios';
 import './App.css';
 
 export default class TabView extends Component {

@@ -10,19 +10,44 @@ const months = [
 
 export default class BrowseView extends Component {
 
+  redirect = (title) => {
+    alert(title)
+  }
+
+
+  generateArticles = (month, currYear = false) => {
+    //Title and subtitle which is the description
+    let items = [];
+    if(currYear){
+      //Find all articles from that month
+      items.push({title: <a href='#'>Article</a>, subtitle: "It is 2017"})
+
+
+    } else {
+      //Return bs
+      items.push({title: "Article", subtitle: "This is an article about things"})
+    }
+    return items;
+  }
+
   generateMonths = (currYear = false) => {
     let items = [];
+    let that = this;
     if(!currYear){
       months.forEach(function(month){
-        items.push({title: month})
+        items.push({title: month, children: that.generateArticles(month, currYear)})
       });
     } else {
       //Up to September
       for(let m = 0; m < 9; m++){
-        items.push({title: months[m]})
+        items.push({title: months[m], children: that.generateArticles(months[m], currYear)})
       }
     }
     return items;
+  }
+
+  generateCategories = () => {
+    
   }
 
 
