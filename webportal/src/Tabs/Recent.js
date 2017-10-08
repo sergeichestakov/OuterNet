@@ -13,7 +13,6 @@ require("jsdom").env("", function(err, window) {
         console.error(err);
         return;
     }
-
     var $ = require("jquery")(window);
 });
 
@@ -38,8 +37,8 @@ export default class RecentView extends Component {
           }
           articles.push(article);
         }
-        const items = articles.map((article) =>
-          <Article title={article.title} category={article.category}
+        const items = articles.map((article, i) =>
+          <Article key={i} title={article.title} category={article.category}
           month={article.month} description={article.description}/>
         );
         return(

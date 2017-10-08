@@ -76,7 +76,7 @@ export default class BrowseView extends Component {
      });
 
     return (
-      <div style={{ height: 1000 }}>
+      <div style={styles.content}>
         <form
             style={{ display: 'inline-block' }}
             onSubmit={event => {
@@ -86,8 +86,8 @@ export default class BrowseView extends Component {
             <input
               id="find-box"
               type="text"
-              placeholder="Search..."
-              style={{ fontSize: '1rem' }}
+              placeholder="Search Articles"
+              style={styles.searchBar}
               value={searchString}
               onChange={event =>
                 this.setState({ searchString: event.target.value })}
@@ -97,6 +97,7 @@ export default class BrowseView extends Component {
               type="button"
               disabled={!searchFoundCount}
               onClick={selectPrevMatch}
+              style={styles.button}
             >
               &lt;
             </button>
@@ -105,6 +106,7 @@ export default class BrowseView extends Component {
               type="submit"
               disabled={!searchFoundCount}
               onClick={selectNextMatch}
+              style={styles.button}
             >
               &gt;
             </button>
@@ -133,4 +135,21 @@ export default class BrowseView extends Component {
       </div>
     );
   }
+}
+
+const styles = {
+    content: {
+      height: 1000,
+      paddingLeft: "10%",
+      paddingRight: "10%"
+    },
+    searchBar: {
+      fontSize: '1rem',
+      height: 40,
+      width: 300
+    },
+    button: {
+      height: 40,
+      width: 40
+    }
 }
