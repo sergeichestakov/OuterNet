@@ -14,7 +14,8 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Welcome to the OuterNet: an uncersored, underground network</h1>
+          <h1 className="App-title">Welcome to the OuterNet</h1>
+          <h5>An uncersored, underground network</h5>
         </header>
         <TabView />
       </div>

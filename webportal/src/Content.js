@@ -8,8 +8,29 @@ export default class TabView extends Component {
 
   constructor(props) {
       super(props)
-      this.state = { activeTab: 0 };
+      this.state =
+      {
+        activeTab: 0,
+        articles: []
+      };
   }
+/*
+  componentDidMount(){
+    return fetch('')
+      .then((response) => response.json())
+      .then((responseJson) => {
+        let ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+        this.setState({
+          isLoading: false,
+          dataSource: ds.cloneWithRows(responseJson.movies),
+        }, function() {
+          // do something with new state
+        });
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }*/
 
   renderContent(index){
       if(index === 0){
