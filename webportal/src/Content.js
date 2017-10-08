@@ -9,7 +9,7 @@ export default class TabView extends Component {
 
   constructor(props) {
       super(props)
-      this.state = { activeTab: 2 };
+      this.state = { activeTab: 1 };
   }
 
   renderContent(index){
