@@ -15,7 +15,7 @@ export default class Article extends Component {
 
     render() {
       return (
-        <div style={styles.card} class="card" onClick={() => this.redirect(this.props.title, this.props.category)}>
+        <div style={styles.card} class="card hvr-grow-shadow" onClick={() => this.redirect(this.props.title, this.props.category)}>
           <div class="card-block">
             <h4 class="card-title">{this.props.title}</h4>
             <h6 class="card-subtitle mb-2 text-muted">{this.props.category}</h6>

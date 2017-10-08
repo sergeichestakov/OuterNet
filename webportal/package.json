@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "hover.css": "^2.2.1",
     "jquery": "^3.2.1",
     "material-tabs": "0.0.8",
     "material-ui": "^0.19.3",
