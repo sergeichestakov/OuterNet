@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "jquery": "^3.2.1",
     "material-tabs": "0.0.8",
     "material-ui": "^0.19.3",
     "react": "^16.0.0",
@@ -11,12 +12,17 @@
     "react-motion": "^0.5.2",
     "react-scripts": "1.0.14",
     "react-swipeable-views": "^0.12.8",
-    "react-toolbox": "^2.0.0-beta.12"
+    "react-toolbox": "^2.0.0-beta.12",
+    "react-treebeard": "^2.0.3",
+    "webpack": "^3.6.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "bootstrap-css": "^4.0.0-alpha.5"
   }
 }

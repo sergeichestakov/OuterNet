@@ -13,9 +13,9 @@ export default class TabView extends Component {
   }
 
   renderContent(index){
-      if(index == 0){
+      if(index === 0){
         return(<RecentView />);
-      } else if (index == 1){
+      } else if (index === 1){
         return(<BrowseView />);
       } else {
         return(<SearchView />);
